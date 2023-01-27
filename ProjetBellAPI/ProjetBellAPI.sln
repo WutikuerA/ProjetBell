@@ -5,7 +5,13 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetBellAPI", "ProjetBellAPI\ProjetBellAPI.csproj", "{EE9A92E7-72A6-4C52-801D-33F1BE1BF67A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectBellAPI.UnitTest", "ProjectBellAPI.UnitTest\ProjectBellAPI.UnitTest.csproj", "{F7775D41-090B-4A00-BF13-FFC4300B8EE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceModule.UnitTest", "ProjectBellAPI.UnitTest\InvoiceModule.UnitTest.csproj", "{F7775D41-090B-4A00-BF13-FFC4300B8EE1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectBellAPI.IntegrationTest", "ProjectBellAPI.IntegrationTest\ProjectBellAPI.IntegrationTest.csproj", "{5AF10711-4C8F-402F-9038-86382C373D54}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetModule", "Asset.Module\AssetModule.csproj", "{4F89F0F9-32A4-454B-92E7-86F2DE1FD026}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceModule", "Invoice.Module\InvoiceModule.csproj", "{3FA766CB-DD2B-4222-9B01-8BD88C0D87B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{F7775D41-090B-4A00-BF13-FFC4300B8EE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7775D41-090B-4A00-BF13-FFC4300B8EE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7775D41-090B-4A00-BF13-FFC4300B8EE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AF10711-4C8F-402F-9038-86382C373D54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AF10711-4C8F-402F-9038-86382C373D54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AF10711-4C8F-402F-9038-86382C373D54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AF10711-4C8F-402F-9038-86382C373D54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F89F0F9-32A4-454B-92E7-86F2DE1FD026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F89F0F9-32A4-454B-92E7-86F2DE1FD026}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F89F0F9-32A4-454B-92E7-86F2DE1FD026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F89F0F9-32A4-454B-92E7-86F2DE1FD026}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FA766CB-DD2B-4222-9B01-8BD88C0D87B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FA766CB-DD2B-4222-9B01-8BD88C0D87B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FA766CB-DD2B-4222-9B01-8BD88C0D87B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FA766CB-DD2B-4222-9B01-8BD88C0D87B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

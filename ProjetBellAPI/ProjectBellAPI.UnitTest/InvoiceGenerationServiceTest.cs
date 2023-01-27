@@ -1,6 +1,6 @@
+using AssetModule.Models;
 using AutoFixture;
-using ProjetBellAPI.Models;
-using ProjetBellAPI.Services;
+using InvoiceModule.Services;
 
 namespace ProjectBellAPI.UnitTest
 {

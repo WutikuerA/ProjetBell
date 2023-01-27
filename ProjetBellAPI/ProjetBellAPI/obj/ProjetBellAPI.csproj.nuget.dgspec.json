@@ -4,6 +4,166 @@
     "C:\\ProjetBell\\ProjetBellAPI\\ProjetBellAPI\\ProjetBellAPI.csproj": {}
   },
   "projects": {
+    "C:\\ProjetBell\\ProjetBellAPI\\Asset.Module\\AssetModule.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\ProjetBell\\ProjetBellAPI\\Asset.Module\\AssetModule.csproj",
+        "projectName": "AssetModule",
+        "projectPath": "C:\\ProjetBell\\ProjetBellAPI\\Asset.Module\\AssetModule.csproj",
+        "packagesPath": "C:\\Users\\usermaltem\\.nuget\\packages\\",
+        "outputPath": "C:\\ProjetBell\\ProjetBellAPI\\Asset.Module\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\usermaltem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\ProjetBell\\ProjetBellAPI\\Invoice.Module\\InvoiceModule.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\ProjetBell\\ProjetBellAPI\\Invoice.Module\\InvoiceModule.csproj",
+        "projectName": "InvoiceModule",
+        "projectPath": "C:\\ProjetBell\\ProjetBellAPI\\Invoice.Module\\InvoiceModule.csproj",
+        "packagesPath": "C:\\Users\\usermaltem\\.nuget\\packages\\",
+        "outputPath": "C:\\ProjetBell\\ProjetBellAPI\\Invoice.Module\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\usermaltem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\ProjetBell\\ProjetBellAPI\\Asset.Module\\AssetModule.csproj": {
+                "projectPath": "C:\\ProjetBell\\ProjetBellAPI\\Asset.Module\\AssetModule.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer.Design": {
+              "target": "Package",
+              "version": "[1.1.6, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\ProjetBell\\ProjetBellAPI\\ProjetBellAPI\\ProjetBellAPI.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -27,7 +187,14 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\ProjetBell\\ProjetBellAPI\\Asset.Module\\AssetModule.csproj": {
+                "projectPath": "C:\\ProjetBell\\ProjetBellAPI\\Asset.Module\\AssetModule.csproj"
+              },
+              "C:\\ProjetBell\\ProjetBellAPI\\Invoice.Module\\InvoiceModule.csproj": {
+                "projectPath": "C:\\ProjetBell\\ProjetBellAPI\\Invoice.Module\\InvoiceModule.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

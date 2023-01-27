@@ -1,11 +1,11 @@
 ﻿
+using AssetModule.DataService;
+using InvoiceModule.DataService;
+using InvoiceModule.Filters;
+using InvoiceModule.Models;
+using InvoiceModule.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ProjetBellAPI.DataService;
-using ProjetBellAPI.Filters;
-using ProjetBellAPI.Interface;
-using ProjetBellAPI.Models;
-using ProjetBellAPI.Services;
 
 namespace ProjetBellAPI.Controllers
 {
@@ -13,18 +13,20 @@ namespace ProjetBellAPI.Controllers
     [ApiController]
     public class InvoiceController : ControllerBase
     {
-        private readonly DataContext _dBContext;
+        private readonly AssetDataContext _assetDBContext;
+        private readonly InvoiceDataContext _invoiceDBContext;
         private readonly IinvoiceGenerationService _invoiceGenerationService;
-        public InvoiceController(DataContext dBContext, IinvoiceGenerationService invoiceGenerationService)
+        public InvoiceController(AssetDataContext assetDBContext, InvoiceDataContext invoiceDataContext, IinvoiceGenerationService invoiceGenerationService)
         {
-            _dBContext = dBContext;
+            _assetDBContext = assetDBContext;
+            _invoiceDBContext = invoiceDataContext;
             _invoiceGenerationService = invoiceGenerationService;
         }
 
         [HttpGet("GetInvoices")]
         public List<Invoice> GetInvoices([FromQuery] InvoiceFilter filter)
         {
-            var invoiceList = from Invoice in _dBContext.Invoice orderby Invoice.IssueDate descending select Invoice;
+            var invoiceList = from Invoice in _invoiceDBContext.Invoice orderby Invoice.IssueDate descending select Invoice;
 
             // Apply filter search on name
             List<Invoice> filteredList = new List<Invoice>();
@@ -42,7 +44,7 @@ namespace ProjetBellAPI.Controllers
         public async Task<Invoice> GenerateInvoice()
         {
             // Get all assets
-            var assetList = from assets in _dBContext.Assets select assets;
+            var assetList = from assets in _assetDBContext.Asset select assets;
 
             // Generate invoice info
             Invoice invoice = await _invoiceGenerationService.GenerateInvoiceFromDBAsync();
@@ -57,12 +59,12 @@ namespace ProjetBellAPI.Controllers
         public bool IsAssetChanged()
         {
             // Get the last asset modification date
-            var lastChangedAsset = (from assets in _dBContext.Assets
+            var lastChangedAsset = (from assets in _assetDBContext.Asset
                             orderby assets.ModificationDate descending
                             select assets).FirstOrDefault();
 
             //Get the last invoice generation date
-            var lastIssuedInvoice = (from invoice in _dBContext.Invoice
+            var lastIssuedInvoice = (from invoice in _invoiceDBContext.Invoice
                                     orderby invoice.IssueDate descending
                                     select invoice).FirstOrDefault();
 
@@ -81,8 +83,8 @@ namespace ProjetBellAPI.Controllers
         {
             try
             {
-                _dBContext.Invoice.Add(invoice);
-                _dBContext.SaveChanges();
+                _invoiceDBContext.Invoice.Add(invoice);
+                _invoiceDBContext.SaveChanges();
             }
             catch (Exception ex) 
             { 

@@ -1,11 +1,34 @@
 {
   "Version": 1,
-  "Hash": "CyMI+SrteshLxryah8z0UntoPX+UOJPFAkzvTBxwgFA=",
+  "Hash": "jV7whGghPZg9eZVnVLmjteLpwUkAfVYEdpG40ew6eNQ=",
   "Source": "ProjetBellAPI",
   "BasePath": "_content/ProjetBellAPI",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\ProjetBell\\ProjetBellAPI\\Asset.Module\\AssetModule.csproj",
+      "Version": 2,
+      "Source": "AssetModule",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    },
+    {
+      "Identity": "C:\\ProjetBell\\ProjetBellAPI\\Invoice.Module\\InvoiceModule.csproj",
+      "Version": 2,
+      "Source": "InvoiceModule",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
   "DiscoveryPatterns": [
     {
       "Name": "ProjetBellAPI\\wwwroot",

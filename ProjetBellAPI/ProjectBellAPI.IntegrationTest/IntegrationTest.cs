@@ -1,7 +1,7 @@
 namespace ProjectBellAPI.IntegrationTest
 {
     [TestClass]
-    public class UnitTest1
+    public class IntegrationAPITest
     {
         [TestMethod]
         public void TestMethod1()

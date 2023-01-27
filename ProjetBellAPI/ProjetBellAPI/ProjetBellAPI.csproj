@@ -22,7 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations\" />
+    <ProjectReference Include="..\Asset.Module\AssetModule.csproj" />
+    <ProjectReference Include="..\Invoice.Module\InvoiceModule.csproj" />
   </ItemGroup>
 
 </Project>

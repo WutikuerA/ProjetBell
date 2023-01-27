@@ -1,8 +1,9 @@
 ﻿
+using AssetModule.DataService;
+using InvoiceModule.DataService;
+using InvoiceModule.Service;
+using InvoiceModule.Services;
 using Microsoft.AspNetCore.Http.Features;
-using ProjetBellAPI.DataService;
-using ProjetBellAPI.Interface;
-using ProjetBellAPI.Services;
 
 namespace ProjetBellAPI
 {
@@ -26,7 +27,8 @@ namespace ProjetBellAPI
             });
 
             services.AddControllers();
-            services.AddScoped<DataContext>();
+            services.AddScoped<AssetDataContext>();
+            services.AddScoped<InvoiceDataContext>();
             services.AddScoped<IinvoiceGenerationService, InvoiceGenerationService>();
 
         }
