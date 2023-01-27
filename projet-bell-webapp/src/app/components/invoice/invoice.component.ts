@@ -24,6 +24,7 @@ export class InvoiceComponent {
   isAssetChanged : boolean = false;
   filter: InvoiceFilter = {};
   invoiceList : Invoice[] = [];
+  priceAbove?:number;
 
   ngOnInit()
   {
@@ -58,7 +59,7 @@ export class InvoiceComponent {
   {
     if(!this.isAssetChanged)
     {
-      this.toastr.error('No new invoice available yet', 'Hmmm...');
+      this.toastr.error('Modify or create asset to get new invoice', 'Lastest invoice is already there in green');
     }
     else
     {
@@ -70,6 +71,12 @@ export class InvoiceComponent {
         });
     }
 
+  }
+
+  onSearchClicked()
+  {
+    this.filter.priceAbove = this.priceAbove;
+    this.ngOnInit();
   }
 
 }

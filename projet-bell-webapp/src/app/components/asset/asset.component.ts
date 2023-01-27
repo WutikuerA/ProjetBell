@@ -99,7 +99,8 @@ export class AssetComponent {
     this.filter.Name = this.searchKeyword;
     this.ngOnInit();
   }
-  // -----------------------------------------------------------------
+
+  // -----------------Modal------------------------------------------------
   openModal()
   {
     var modal = document.getElementById("my-modal");
@@ -158,14 +159,5 @@ export class AssetComponent {
 
   }
 
-  onNameChanged()
-  {
-    var x = 0;
-  }
-
-  onPriceChanged()
-  {
-
-  }
 
 }
