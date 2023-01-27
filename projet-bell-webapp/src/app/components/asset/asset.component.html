@@ -1,0 +1,75 @@
+<div class="asset-container">
+    <div class="action-bar">
+        <div class="button-container">
+            <button type="button" class="btn-local" (click)="onCreateClicked()">Create</button>
+        </div>
+        <div class="button-container">
+            <button type="button" class="btn-local" (click)="onEditClicked()">Edit</button>
+        </div>
+        <div class="button-container">
+            <button type="button" class="btn-local" (click)="onDeleteClicked()">Delete</button>
+        </div>
+    </div>
+
+    <div class="asset-list-container">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th class="table-header">Id</th>
+                    <th class="table-header">Name</th>
+                    <th class="table-header">Price</th>
+                    <th class="table-header">ValidFrom</th>
+                    <th class="table-header">ValidTo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let asset of this.assetList; index as i" (click)="onRowSelected(asset.id)" [id]=asset.id>
+                    <td class="data-cell">{{asset.id}}</td>
+                    <td class="data-cell">{{asset.name}}</td>
+                    <td class="data-cell">{{asset.price}}</td>
+                    <td class="data-cell">{{asset.validFrom == null||undefined ? "From begining" : asset.validFrom| date: 'shortDate'}}</td>
+                    <td class="data-cell">{{asset.validTo == null||undefined ? "Forever" : asset.validTo| date: 'shortDate'}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-------------------------------- Modal popup-------------------------------------->
+<div class="modal-container" id="my-modal">
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Add/Edit asset</h4>
+	</div>
+	<div class="modal-body">
+		<div class="form-item">
+            <div class="key">Name</div>
+            <div class="value">
+                <input class="local-input" type="text" id="name" [(ngModel)]="this.displayedAsset.name" (ngModelChange)="onNameChanged()">
+            </div>
+        </div>
+        <div class="form-item">
+            <div class="key">Price</div>
+            <div class="value">
+                <input class="local-input" type="number" id="price" [(ngModel)]="this.displayedAsset.price" (ngModelChange)="onPriceChanged()">
+            </div>
+        </div>
+        <div class="form-item">
+            <div class="key">Valid from</div>
+            <div class="value">
+                <input class="local-input" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="this.displayedAsset.validFrom" ngbDatepicker #d="ngbDatepicker">
+            </div>
+        </div>
+        <div class="form-item">
+            <div class="key">Valid to</div>
+            <div class="value">
+                <input class="local-input" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="this.displayedAsset.validTo" ngbDatepicker #d="ngbDatepicker">
+            </div>
+        </div>
+	</div>
+	<div class="modal-footer">
+        <div class="buttons-container">
+            <button class="btn-local" (click)="onSave()" >Save</button>
+            <button class="btn-local"(click)="onCancel()" >Cancel</button>
+        </div>
+	</div>
+</div>

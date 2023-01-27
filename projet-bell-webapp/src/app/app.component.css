@@ -1,0 +1,44 @@
+.web-page-container
+{
+    padding: 50px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.menu-container
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menu-item
+{
+    margin: 50px;
+    color: white;
+    text-decoration: none;
+}
+
+.menu-item:hover
+{
+    color: white;
+    align-items: center;
+    cursor: pointer;
+    text-shadow: 0 0 10px white
+}
+
+.nav-link
+{
+    text-decoration: none;
+    color: white;
+}
+
+.page-content
+{
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 80vh;
+    overflow-y: scroll;
+    padding: 20px;
+}
+
