@@ -30,7 +30,7 @@ export const routingComponents = [
       tapToDismiss: true, 
       closeButton: true, 
       newestOnTop: true, 
-      timeOut: 10000, 
+      timeOut: 5000, 
       progressBar: true, 
       enableHtml: true
     }),

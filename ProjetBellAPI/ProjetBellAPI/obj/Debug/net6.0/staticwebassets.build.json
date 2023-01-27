@@ -1,23 +1,11 @@
 {
   "Version": 1,
-  "Hash": "ijngt57e41c/aHX4tMcR2RNxazafZLr8YhSHjxxbvS4=",
+  "Hash": "CyMI+SrteshLxryah8z0UntoPX+UOJPFAkzvTBxwgFA=",
   "Source": "ProjetBellAPI",
   "BasePath": "_content/ProjetBellAPI",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [
-    {
-      "Identity": "C:\\ProjetBell\\ProjetBellAPI\\AssetManagement.Service\\Assets.Module.csproj",
-      "Version": 2,
-      "Source": "Assets.Module",
-      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
-      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
-      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
-      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
-    }
-  ],
+  "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
       "Name": "ProjetBellAPI\\wwwroot",

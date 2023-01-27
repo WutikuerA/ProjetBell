@@ -1,19 +1,17 @@
-﻿using Assets.Module.DataService;
-using Assets.Module.Filters;
-using Assets.Module.Models;
-using Microsoft.AspNetCore.Http;
+﻿
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.Configuration;
+using ProjetBellAPI.DataService;
+using ProjetBellAPI.Filters;
+using ProjetBellAPI.Models;
 
-namespace Assets.Module.Controllers
+namespace ProjetBellAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class AssetController : ControllerBase
     {
-        private AssetDataContext _dbContext;
-        public AssetController(AssetDataContext dbContext)
+        private DataContext _dbContext;
+        public AssetController(DataContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -23,27 +21,57 @@ namespace Assets.Module.Controllers
         {
             var assetList = from assets in _dbContext.Assets select assets;
 
+            // Apply filter search on name
+            List<Asset> filteredList = new List<Asset>();
+            if(filter.Name != null)
+            {
+                filteredList = assetList.Where(a => a.Name.Contains(filter.Name)).ToList();
+                return filteredList;
+            }
+
+
             return assetList.ToList();
         }
 
         [HttpPost]
         public bool ModifyAsset(Asset asset)
         {
-            if(asset.Id == 0)
+            asset.ModificationDate = DateTime.Now;
+
+            if (asset.Id == 0)
             {
                 // Creation
-                var post = _dbContext.Assets.Add(asset);
+                _dbContext.Assets.Add(asset);
             }
             else
             {
                 //Edition
-                var post = _dbContext.Assets.Update(asset);
+                _dbContext.Assets.Update(asset);
             }
 
             bool isSaved = _dbContext.SaveChanges() > 0;
 
             return isSaved;
         }
+
+        [HttpDelete("{assetId}")]
+        public bool DeleteAsset(int assetId)
+        {
+            // Find the asset to be removed
+            Asset? asset = _dbContext.Assets.Where(a => a.Id == assetId)?.FirstOrDefault();
+
+            // Delete the asset
+            if(asset != null)
+            {
+                var changeTrack = _dbContext.Assets.Remove(asset);
+            }
+
+            bool isSaved = _dbContext.SaveChanges() > 0;
+
+            return isSaved;
+        }
+
+        
 
 
 

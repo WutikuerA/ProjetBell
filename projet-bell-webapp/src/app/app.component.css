@@ -6,39 +6,44 @@
 
 .menu-container
 {
-    background-color: rgba(0, 0, 0, 0.5);
     height: 50px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
 }
 
 .menu-item
 {
     margin: 50px;
-    color: white;
     text-decoration: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .menu-item:hover
 {
-    color: white;
     align-items: center;
     cursor: pointer;
-    text-shadow: 0 0 10px white
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .nav-link
 {
     text-decoration: none;
-    color: white;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: large;
+    font-weight: bold;
 }
 
 .page-content
 {
     background-color: rgba(0, 0, 0, 0.1);
     height: 80vh;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     padding: 20px;
 }
 

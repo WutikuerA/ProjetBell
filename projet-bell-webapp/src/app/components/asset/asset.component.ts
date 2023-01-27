@@ -2,7 +2,7 @@ import { Component, Renderer2, ViewChild } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 import { AssetDataService } from 'src/data-service/asset.service';
-import { AssetFilter } from 'src/filters/asset.filter';
+import { AssetFilter } from 'src/filters/asset-filter';
 import { Asset } from 'src/models/asset.model';
 
 @Component({
@@ -28,36 +28,39 @@ export class AssetComponent {
   currentPrice!: number;
   currentSelectedAsset: Asset = {id: 0, name: ''};
   displayedAsset: Asset = {id: 0, name: ''};
-
+  isCreationMode: boolean = false;
+  searchKeyword: string = "";
+  filter: AssetFilter = {}; 
 
 
   @ViewChild('productEditModal') assetModal!: NgbModal;
   private modalRef!: NgbModalRef;
   ngOnInit(): void 
-  {
-    let filter: AssetFilter = {}; 
-
-    this.assetDataService.getAssets(filter).subscribe(res => 
+  {    
+    this.assetDataService.getAssets(this.filter).subscribe(res => 
       {
         // Get all the assets
         this.assetList = res;
       })
+    this.currentSelectedAsset = {id: 0, name: ''};
+    this.displayedAsset = {id: 0, name: ''};
 
   }  
 
 // action bar buttons --------------------------------------------------
   onCreateClicked()
   {    
+    this.isCreationMode = true;
     this.displayedAsset = {id: 0, name: ''};
     this.openModal();
-    this.toastr.success('Ce nouveau produit est bien ajouté.', 'Wooo!');
   }
 
   onEditClicked()
   {
+    this.isCreationMode = false;
     if(this.currentSelectedAsset.id == 0)
     {
-      this.toastr.warning('select an asset first!', 'Oops');
+      this.toastr.warning('Gotta select an asset first.', 'Oops');
     }
     else
     {
@@ -71,14 +74,30 @@ export class AssetComponent {
   {
     if(this.currentSelectedAsset.id == 0)
     {
-      this.toastr.warning('select an asset first!', 'Oops');
+      this.toastr.warning('Gotta select an asset first.', 'Oops');
     }
     else
     {
       this.displayedAsset = this.currentSelectedAsset;
-      this.openModal();
+
+      this.assetDataService.deleteAsset(this.currentSelectedAsset.id).subscribe(
+        res => {
+          this.toastr.success('The asset is deleted', 'Gone, nothing left.')
+          this.ngOnInit();//refresh the page
+        },
+        err => { 
+          console.log(err); 
+          this.toastr.success('Somthing went wrong', 'Error occured while saving.')
+        }
+      );
     }
 
+  }
+
+  onSearchClicked()
+  {
+    this.filter.Name = this.searchKeyword;
+    this.ngOnInit();
   }
   // -----------------------------------------------------------------
   openModal()
@@ -107,7 +126,7 @@ export class AssetComponent {
     this.previousSelectedRow = selectedRow;
 
     // select Asset item
-    this.currentSelectedAsset = this.assetList.find(a => a.id = i)!;
+    this.currentSelectedAsset = this.assetList.find(a => a.id == i)!;
   }
 
   onCancel()
@@ -118,7 +137,7 @@ export class AssetComponent {
   onSave()
   {
     let assetOnSave = {
-      id: 0,
+      id: this.isCreationMode ? 0 : this.displayedAsset.id,
       name: this.displayedAsset.name,
       price: this.displayedAsset.price,
       validFrom: this.displayedAsset.validFrom,
@@ -127,7 +146,7 @@ export class AssetComponent {
 
     this.assetDataService.modifyAsset(assetOnSave).subscribe(
       res => {
-        this.toastr.success('Submitted successfully', 'New asset added.')
+        this.toastr.success('Submitted successfully', 'Asset saved.')
         this.onModalClosed();
         this.ngOnInit();//refresh the page
       },

@@ -9,6 +9,16 @@
         <div class="button-container">
             <button type="button" class="btn-local" (click)="onDeleteClicked()">Delete</button>
         </div>
+        <div class="search-section">
+            <div class="search-box">
+                <input class="local-input" type="text" id="name" [(ngModel)]="this.searchKeyword" placeholder="Keyword in name...">
+            </div>
+            <div class="search-button">
+                <div class="button-container">
+                    <button type="button" class="btn-local" (click)="onSearchClicked()">Search</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="asset-list-container">

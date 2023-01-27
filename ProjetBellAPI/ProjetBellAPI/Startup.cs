@@ -1,11 +1,8 @@
-﻿using Assets.Module.DataService;
-using Microsoft.AspNetCore.Components.Web;
+﻿
 using Microsoft.AspNetCore.Http.Features;
-using Microsoft.AspNetCore.StaticFiles;
-using Microsoft.Extensions.FileProviders;
-using Microsoft.OpenApi.Models;
-using Swashbuckle.Swagger;
-using System.Reflection;
+using ProjetBellAPI.DataService;
+using ProjetBellAPI.Interface;
+using ProjetBellAPI.Services;
 
 namespace ProjetBellAPI
 {
@@ -29,19 +26,9 @@ namespace ProjetBellAPI
             });
 
             services.AddControllers();
-            services.AddScoped<AssetDataContext>();
-            services.AddCors( option =>
-            {
-                option.AddPolicy(name: "MyAllowSpecifications",
-                    builder =>
-                    {
-                        builder.WithOrigins(
-                                "http://localhost:4200",
-                                "http://localhost:4201",
-                                "http://localhost:5011"
-                            );
-                    });
-            });
+            services.AddScoped<DataContext>();
+            services.AddScoped<IinvoiceGenerationService, InvoiceGenerationService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,11 +36,6 @@ namespace ProjetBellAPI
         {
 
             app.UseStaticFiles();
-            app.UseSwaggerUI(c =>
-            {
-                c.RoutePrefix = "";
-                c.SwaggerEndpoint("v1/swagger.json", "My service");
-            });
             app.UseCors(options =>
             options.WithOrigins("http://localhost:4200")
             .AllowAnyMethod()

@@ -7,7 +7,7 @@ services:
             context: ./ProjetBellAPI
             dockerfile: ./Dockerfile
         ports:
-         - 5010:80
+         - 5011:8080
     
     angular:
         image: angular
@@ -15,6 +15,6 @@ services:
             context: ./projet-bell-webapp/projet-bell-angular
             dockerfile: ./Dockerfile
         ports:
-         - 4200:80
+         - 4200:8080
         environment:
             "BASE_URL": "http://localhost:5010"
