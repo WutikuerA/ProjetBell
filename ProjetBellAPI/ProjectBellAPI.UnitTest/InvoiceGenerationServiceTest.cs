@@ -55,5 +55,7 @@ namespace ProjectBellAPI.UnitTest
             //Assert
             Assert.Equal(_price, invoice.TotalPrice);
         }
+
+
     }
 }

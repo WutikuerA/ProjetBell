@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, isDevMode } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import { DataService } from './data-service';
@@ -13,7 +13,8 @@ export class AssetDataService {
 
   constructor(private http: HttpClient, private dataService: DataService) { }
 
-  readonly baseURL = 'http://localhost:5011/api/Asset'
+  port: string = isDevMode() ? '5011' : '8080';
+  readonly baseURL = 'http://localhost:' + this.port + '/api/Asset';
   list: Asset[] = [];
   formData: Asset = new Asset();
 
@@ -25,6 +26,7 @@ export class AssetDataService {
 
   getAssets(filter: any) : Observable<any>
   {
+    window.console.log('port number:' + this.port);
     let requestParams = this.dataService.getFormattedParams(filter);
     return this.http.get<Asset[]>(this.baseURL + "/GetAssets", { params: requestParams });
   }

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, isDevMode } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import { DataService } from './data-service';
@@ -14,7 +14,8 @@ export class InvoiceDataService {
 
   constructor(private http: HttpClient, private dataService: DataService) { }
 
-  readonly baseURL = 'http://localhost:5011/api/Invoice'
+  port: string = isDevMode() ? '5011' : '8080';
+  readonly baseURL = 'http://localhost:' + this.port + '/api/Invoice';
   list: Asset[] = [];
   formData: Asset = new Asset();
 

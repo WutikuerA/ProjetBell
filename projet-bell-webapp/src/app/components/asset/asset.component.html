@@ -1,7 +1,7 @@
 <div class="asset-container">
     <div class="action-bar">
         <div class="button-container">
-            <button type="button" class="btn-local" (click)="onCreateClicked()">Create</button>
+            <button type="button" class="btn-local" (click)="onCreateClicked()">Createee</button>
         </div>
         <div class="button-container">
             <button type="button" class="btn-local" (click)="onEditClicked()">Edit</button>
@@ -37,7 +37,7 @@
                     <td class="data-cell">{{asset.id}}</td>
                     <td class="data-cell">{{asset.name}}</td>
                     <td class="data-cell">{{asset.price}}</td>
-                    <td class="data-cell">{{asset.validFrom == null||undefined ? "From begining" : asset.validFrom| date: 'shortDate'}}</td>
+                    <td class="data-cell">{{asset.validFrom == null||undefined ? "From the begining" : asset.validFrom| date: 'shortDate'}}</td>
                     <td class="data-cell">{{asset.validTo == null||undefined ? "Forever" : asset.validTo| date: 'shortDate'}}</td>
                 </tr>
             </tbody>

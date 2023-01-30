@@ -23,7 +23,7 @@ export const routingComponents = [
 
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, { useHash: true }),
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right', 
       preventDuplicates: true, 

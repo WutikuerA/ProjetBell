@@ -1,4 +1,4 @@
-import { Component, Renderer2} from '@angular/core';
+import { Component, isDevMode, Renderer2} from '@angular/core';
 import { NgbDateStruct, NgbModal, NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 import { AssetDataService } from 'src/data-service/asset.service';
@@ -46,7 +46,6 @@ export class AssetComponent {
       })
     this.currentSelectedAsset = {id: 0, name: ''};
     this.displayedAsset = {id: 0, name: ''};
-
   }  
 
 // action bar buttons --------------------------------------------------

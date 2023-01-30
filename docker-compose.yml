@@ -25,12 +25,11 @@ services:
          - "8080:80"
         depends_on: 
          - db
-    
+
     angular-front:
         build:
             context: ./projet-bell-webapp
             dockerfile: ./Dockerfile
         ports:
-         - "4200:4200"
-        command: 
-        bash -c "npm install && ng serve --host 0.0.0.0 --port 4200"
+            - "4200:80"         
+    
