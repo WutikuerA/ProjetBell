@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "jV7whGghPZg9eZVnVLmjteLpwUkAfVYEdpG40ew6eNQ=",
+  "Hash": "e/auG9nJjCSsPctOn9fpbQgX/SJZJisJcatXsewI4Qg=",
   "Source": "ProjetBellAPI",
   "BasePath": "_content/ProjetBellAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\ProjetBell\\ProjetBellAPI\\Asset.Module\\AssetModule.csproj",
+      "Identity": "C:\\ProjetBell\\ProjetBellAPI\\AssetModule\\AssetModule.csproj",
       "Version": 2,
       "Source": "AssetModule",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
@@ -18,7 +18,7 @@
       "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
     },
     {
-      "Identity": "C:\\ProjetBell\\ProjetBellAPI\\Invoice.Module\\InvoiceModule.csproj",
+      "Identity": "C:\\ProjetBell\\ProjetBellAPI\\InvoiceModule\\InvoiceModule.csproj",
       "Version": 2,
       "Source": "InvoiceModule",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",

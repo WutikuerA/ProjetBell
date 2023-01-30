@@ -66,13 +66,25 @@
         <div class="form-item">
             <div class="key">Valid from</div>
             <div class="value">
-                <input class="local-input" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="this.displayedAsset.validFrom" ngbDatepicker #d="ngbDatepicker">
+                <mat-form-field appearance="fill">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker1" [(ngModel)]="this.displayedAsset.validFrom">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                  </mat-form-field>
             </div>
         </div>
         <div class="form-item">
             <div class="key">Valid to</div>
             <div class="value">
-                <input class="local-input" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="this.displayedAsset.validTo" ngbDatepicker #d="ngbDatepicker">
+                <mat-form-field appearance="fill">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker2" [(ngModel)]="this.displayedAsset.validTo">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                  </mat-form-field>
             </div>
         </div>
 	</div>

@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "rq4Xuiz4fNxW7KlI8ZyrBYZOTy0Ij9rodrFK7GUXVpA=",
+  "Source": "InvoiceModule",
+  "BasePath": "_content/InvoiceModule",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\ProjetBell\\ProjetBellAPI\\AssetModule\\AssetModule.csproj",
+      "Version": 2,
+      "Source": "AssetModule",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

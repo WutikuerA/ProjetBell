@@ -11,7 +11,7 @@ namespace ProjetBellAPI.Controllers
     [ApiController]
     public class AssetController : ControllerBase
     {
-        private AssetDataContext _dbContext;
+        private readonly AssetDataContext _dbContext;
         public AssetController(AssetDataContext dbContext)
         {
             _dbContext = dbContext;

@@ -1,24 +1,16 @@
-# Build stage
-FROM mcr.microsoft.com/dotnet/aspnet:6.0-focal AS base
-WORKDIR /app
-##EXPOSE 5010
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
+WORKDIR /App
 
-ENV ASPNETCORE_URLS=http://+:5011
+# Copy everything
+COPY . ./
+# Restore as distinct layers
+RUN dotnet restore
+# Build and publish a release
+RUN dotnet publish -c Release -o out
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0-focal AS build
-WORKDIR /src
-COPY ["./ProjetBellAPI/ProjetBellAPI.csproj, "./"]
-RUN dotnet restore "./ProjetBellAPI/ProjetBellAPI.csproj"
-COPY . .
-WORKDIR "/src/."
-RUN dotnet build "./ProjetBellAPI/ProjetBellAPI.csproj" -c release -o /app/build
-
-From build AS publish
-RUN dotnet publish "./ProjetBellAPI/ProjetBellAPI.csproj" -c release -o /app/publish /p:UseAppHost=false
-
-
-FROM base AS finam
-WORKDIR /app
-COPY --from=publish /app/publish .
-
+# Build runtime image
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
+WORKDIR /App
+EXPOSE 80
+COPY --from=build-env /App/out .
 ENTRYPOINT ["dotnet", "ProjetBellAPI.dll"]

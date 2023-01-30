@@ -4,6 +4,10 @@ using InvoiceModule.DataService;
 using InvoiceModule.Service;
 using InvoiceModule.Services;
 using Microsoft.AspNetCore.Http.Features;
+using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.Metrics;
+using ProjetBellAPI.PrepDB;
+using Microsoft.AspNetCore.Hosting.Server;
 
 namespace ProjetBellAPI
 {
@@ -19,6 +23,7 @@ namespace ProjetBellAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            Console.WriteLine($"ProjectBellApi starting...");
             services.Configure<FormOptions>(fo =>
             {
                 fo.ValueLengthLimit = int.MaxValue;
@@ -27,8 +32,28 @@ namespace ProjetBellAPI
             });
 
             services.AddControllers();
-            services.AddScoped<AssetDataContext>();
-            services.AddScoped<InvoiceDataContext>();
+            
+
+            if(Environment.GetEnvironmentVariable("DBServer") != null)
+            {
+                // Use below DB connection info if not local
+                var server = Environment.GetEnvironmentVariable("DBServer") ?? "db";
+                var port = Environment.GetEnvironmentVariable("DBPort") ?? "1433";
+                var user = Environment.GetEnvironmentVariable("DBUser") ?? "SA";
+                var password = Environment.GetEnvironmentVariable("DBPassword") ?? "Passw0rd2022";
+                var database = Environment.GetEnvironmentVariable("Database") ?? "ProjectBellDB";
+
+                services.AddDbContext<AssetDataContext>(o => o.UseSqlServer($"Server={server},{port};Initial Catalog={database};User ID={user};Password={password}"));
+                services.AddDbContext<InvoiceDataContext>(o => o.UseSqlServer($"Server={server},{port};Initial Catalog={database};User ID={user};Password={password}"));
+
+
+            }
+            else
+            {
+                services.AddScoped<AssetDataContext>();
+                services.AddScoped<InvoiceDataContext>();
+            }
+
             services.AddScoped<IinvoiceGenerationService, InvoiceGenerationService>();
 
         }
@@ -57,6 +82,8 @@ namespace ProjetBellAPI
             {
                 endpoints.MapControllers();
             });
+
+            PrepareDB.PrepPopulation(app); 
 
         }
     }

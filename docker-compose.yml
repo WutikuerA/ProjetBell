@@ -1,20 +1,36 @@
 version: '3.4'
-
-services:
-    msnet6:
+    
+services:    
+    db:
+        image: "mcr.microsoft.com/mssql/server:2022-latest"
+        environment: 
+            ACCEPT_EULA: "Y"
+            SA_PASSWORD: "Passw0rd2022"
+            MSSQL_PID: Express
+        ports:
+         - "1433:1433"
+        
+    backendapi:
         image: msnet6
         build:
             context: ./ProjetBellAPI
             dockerfile: ./Dockerfile
+        environment: 
+         - DBServer=db
+         - DBPort=1433
+         - DBUser=SA
+         - DBPassword=Passw0rd2022
+         - Database=ProjectBellDB
         ports:
-         - 5011:8080
+         - "8080:80"
+        depends_on: 
+         - db
     
-    angular:
-        image: angular
+    angular-front:
         build:
-            context: ./projet-bell-webapp/projet-bell-angular
+            context: ./projet-bell-webapp
             dockerfile: ./Dockerfile
         ports:
-         - 4200:8080
-        environment:
-            "BASE_URL": "http://localhost:5010"
+         - "4200:4200"
+        command: 
+        bash -c "npm install && ng serve --host 0.0.0.0 --port 4200"

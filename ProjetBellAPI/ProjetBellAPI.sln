@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceModule.UnitTest", "P
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectBellAPI.IntegrationTest", "ProjectBellAPI.IntegrationTest\ProjectBellAPI.IntegrationTest.csproj", "{5AF10711-4C8F-402F-9038-86382C373D54}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetModule", "Asset.Module\AssetModule.csproj", "{4F89F0F9-32A4-454B-92E7-86F2DE1FD026}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetModule", "AssetModule\AssetModule.csproj", "{4F89F0F9-32A4-454B-92E7-86F2DE1FD026}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceModule", "Invoice.Module\InvoiceModule.csproj", "{3FA766CB-DD2B-4222-9B01-8BD88C0D87B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceModule", "InvoiceModule\InvoiceModule.csproj", "{3FA766CB-DD2B-4222-9B01-8BD88C0D87B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

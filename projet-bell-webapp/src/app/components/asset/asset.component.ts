@@ -1,9 +1,11 @@
-import { Component, Renderer2, ViewChild } from '@angular/core';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { Component, Renderer2} from '@angular/core';
+import { NgbDateStruct, NgbModal, NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 import { AssetDataService } from 'src/data-service/asset.service';
 import { AssetFilter } from 'src/filters/asset-filter';
 import { Asset } from 'src/models/asset.model';
+
+
 
 @Component({
   selector: 'app-assets',
@@ -14,13 +16,13 @@ export class AssetComponent {
 
   constructor(
     private assetDataService: AssetDataService, 
-    private modalService: NgbModal,
     private renderer: Renderer2,
     private toastr: ToastrService) 
   {  
   }
 
-  model: any;
+  validFrom: any;
+  validTo: any;
   assetList: Asset[] = [];
   previousSelectedRow: any;
   isFormValid : boolean = false;
@@ -32,9 +34,9 @@ export class AssetComponent {
   searchKeyword: string = "";
   filter: AssetFilter = {}; 
 
+  modelDate!: NgbDateStruct;
+	date: { year: number; month: number; } | undefined;
 
-  @ViewChild('productEditModal') assetModal!: NgbModal;
-  private modalRef!: NgbModalRef;
   ngOnInit(): void 
   {    
     this.assetDataService.getAssets(this.filter).subscribe(res => 
@@ -137,25 +139,40 @@ export class AssetComponent {
 
   onSave()
   {
-    let assetOnSave = {
-      id: this.isCreationMode ? 0 : this.displayedAsset.id,
-      name: this.displayedAsset.name,
-      price: this.displayedAsset.price,
-      validFrom: this.displayedAsset.validFrom,
-      validTo: this.displayedAsset.validTo
+    if(this.displayedAsset.validFrom!=null && 
+      this.displayedAsset?.validTo !=null &&
+      this.displayedAsset.validFrom > this.displayedAsset?.validTo)
+    {
+      this.toastr.error('From date should not be later than To date.', 'Invalid date.')
+    }
+    else if(this.displayedAsset.name == null || this.displayedAsset.price == null)
+    {
+      this.toastr.error('Name and price can not be empty.', 'Invalid data.')
+    }
+    else
+    {
+      let assetOnSave = {
+        id: this.isCreationMode ? 0 : this.displayedAsset.id,
+        name: this.displayedAsset.name,
+        price: this.displayedAsset.price,
+        validFrom: this.displayedAsset.validFrom,
+        validTo: this.displayedAsset.validTo
+      }
+  
+      this.assetDataService.modifyAsset(assetOnSave).subscribe(
+        res => {
+          this.toastr.success('Submitted successfully', 'Asset saved.')
+          this.onModalClosed();
+          this.ngOnInit();//refresh the page
+        },
+        err => { 
+          console.log(err); 
+          this.toastr.success('Somthing went wrong', 'Error occured while saving.')
+        }
+      );
     }
 
-    this.assetDataService.modifyAsset(assetOnSave).subscribe(
-      res => {
-        this.toastr.success('Submitted successfully', 'Asset saved.')
-        this.onModalClosed();
-        this.ngOnInit();//refresh the page
-      },
-      err => { 
-        console.log(err); 
-        this.toastr.success('Somthing went wrong', 'Error occured while saving.')
-      }
-    );
+    
 
   }
 

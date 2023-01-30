@@ -7674,13 +7674,13 @@
     },
     "AssetModule/1.0.0": {
       "type": "project",
-      "path": "../Asset.Module/AssetModule.csproj",
-      "msbuildProject": "../Asset.Module/AssetModule.csproj"
+      "path": "../AssetModule/AssetModule.csproj",
+      "msbuildProject": "../AssetModule/AssetModule.csproj"
     },
     "InvoiceModule/1.0.0": {
       "type": "project",
-      "path": "../Invoice.Module/InvoiceModule.csproj",
-      "msbuildProject": "../Invoice.Module/InvoiceModule.csproj"
+      "path": "../InvoiceModule/InvoiceModule.csproj",
+      "msbuildProject": "../InvoiceModule/InvoiceModule.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -7722,11 +7722,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\ProjetBell\\ProjetBellAPI\\Asset.Module\\AssetModule.csproj": {
-              "projectPath": "C:\\ProjetBell\\ProjetBellAPI\\Asset.Module\\AssetModule.csproj"
+            "C:\\ProjetBell\\ProjetBellAPI\\AssetModule\\AssetModule.csproj": {
+              "projectPath": "C:\\ProjetBell\\ProjetBellAPI\\AssetModule\\AssetModule.csproj"
             },
-            "C:\\ProjetBell\\ProjetBellAPI\\Invoice.Module\\InvoiceModule.csproj": {
-              "projectPath": "C:\\ProjetBell\\ProjetBellAPI\\Invoice.Module\\InvoiceModule.csproj"
+            "C:\\ProjetBell\\ProjetBellAPI\\InvoiceModule\\InvoiceModule.csproj": {
+              "projectPath": "C:\\ProjetBell\\ProjetBellAPI\\InvoiceModule\\InvoiceModule.csproj"
             }
           }
         }

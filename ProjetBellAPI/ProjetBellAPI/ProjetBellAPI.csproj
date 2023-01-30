@@ -22,8 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Asset.Module\AssetModule.csproj" />
-    <ProjectReference Include="..\Invoice.Module\InvoiceModule.csproj" />
+    <ProjectReference Include="..\AssetModule\AssetModule.csproj" />
+    <ProjectReference Include="..\InvoiceModule\InvoiceModule.csproj" />
   </ItemGroup>
 
 </Project>

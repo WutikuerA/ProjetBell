@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fZQkNXORVMPgLuwrJNr9IZA0PoQnozi/A5r/1UVZNAFYzYiqcS3KfT5LsSqNFQFAMbU7ho/fRpYS4S1oWbyagQ==",
+  "dgSpecHash": "kv4+wgR64HAH+SbgBho068w5KCYysWa7UEzB2KaVK0H4xNt6ZkrWPoa1iLAEahcIWIxxize4NlY5ZCF+QDMvYQ==",
   "success": true,
   "projectFilePath": "C:\\ProjetBell\\ProjetBellAPI\\ProjectBellAPI.UnitTest\\InvoiceModule.UnitTest.csproj",
   "expectedPackageFiles": [

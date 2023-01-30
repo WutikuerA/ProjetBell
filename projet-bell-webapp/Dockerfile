@@ -1,11 +1,9 @@
-FROM node:lastest as build
-WORKDIR /usr/local/app
-COPY ./ /usr/local/app
-
-RUN npm install -g @angular/cli
-
-RUN npm run build
-
-##EXPOSE 80:4200
-
-CMD /project/node_modules/.bin/ng serve --host 0.0.0.0 
+# Stage 1
+FROM node:18.13.0 as node
+WORKDIR /app
+COPY . .
+RUN npm install
+RUN npm run build --prod
+# Stage 2
+FROM nginx:alpine
+COPY --from=node /app/dist/projet-bell-webapp /usr/share/nginx/html

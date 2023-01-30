@@ -9152,13 +9152,13 @@
     },
     "AssetModule/1.0.0": {
       "type": "project",
-      "path": "../Asset.Module/AssetModule.csproj",
-      "msbuildProject": "../Asset.Module/AssetModule.csproj"
+      "path": "../AssetModule/AssetModule.csproj",
+      "msbuildProject": "../AssetModule/AssetModule.csproj"
     },
     "InvoiceModule/1.0.0": {
       "type": "project",
-      "path": "../Invoice.Module/InvoiceModule.csproj",
-      "msbuildProject": "../Invoice.Module/InvoiceModule.csproj"
+      "path": "../InvoiceModule/InvoiceModule.csproj",
+      "msbuildProject": "../InvoiceModule/InvoiceModule.csproj"
     },
     "ProjetBellAPI/1.0.0": {
       "type": "project",
