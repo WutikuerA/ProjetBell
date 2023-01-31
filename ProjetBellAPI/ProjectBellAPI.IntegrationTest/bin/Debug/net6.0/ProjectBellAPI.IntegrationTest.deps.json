@@ -34,11 +34,13 @@
     ".NETCoreApp,Version=v6.0": {
       "ProjectBellAPI.IntegrationTest/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Mvc.Testing": "6.0.12",
+          "AssetModule": "1.0.0",
+          "Microsoft.AspNetCore.Mvc.Testing": "6.0.1",
           "Microsoft.NET.Test.Sdk": "17.3.2",
           "ProjetBellAPI": "1.0.0",
           "coverlet.collector": "3.1.2",
           "xunit": "2.4.2",
+          "xunit.runner.visualstudio": "2.4.5",
           "Microsoft.AspNetCore.Antiforgery": "6.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "6.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "6.0.0.0",
@@ -396,30 +398,30 @@
           "lib/net40/System.Web.Http.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Mvc.Testing/6.0.12": {
+      "Microsoft.AspNetCore.Mvc.Testing/6.0.1": {
         "dependencies": {
-          "Microsoft.AspNetCore.TestHost": "6.0.12",
+          "Microsoft.AspNetCore.TestHost": "6.0.1",
           "Microsoft.Extensions.DependencyModel": "6.0.0",
-          "Microsoft.Extensions.Hosting": "6.0.1"
+          "Microsoft.Extensions.Hosting": "6.0.0"
         },
         "runtime": {
           "lib/net6.0/Microsoft.AspNetCore.Mvc.Testing.dll": {
-            "assemblyVersion": "6.0.12.0",
-            "fileVersion": "6.0.1222.57109"
+            "assemblyVersion": "6.0.1.0",
+            "fileVersion": "6.0.121.56714"
           }
         },
         "compile": {
           "lib/net6.0/Microsoft.AspNetCore.Mvc.Testing.dll": {}
         }
       },
-      "Microsoft.AspNetCore.TestHost/6.0.12": {
+      "Microsoft.AspNetCore.TestHost/6.0.1": {
         "dependencies": {
-          "System.IO.Pipelines": "6.0.3"
+          "System.IO.Pipelines": "6.0.1"
         },
         "runtime": {
           "lib/net6.0/Microsoft.AspNetCore.TestHost.dll": {
-            "assemblyVersion": "6.0.12.0",
-            "fileVersion": "6.0.1222.57109"
+            "assemblyVersion": "6.0.1.0",
+            "fileVersion": "6.0.121.56714"
           }
         },
         "compile": {
@@ -672,16 +674,10 @@
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0"
         }
       },
-      "Microsoft.Extensions.Configuration.EnvironmentVariables/6.0.1": {
+      "Microsoft.Extensions.Configuration.EnvironmentVariables/6.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Configuration.EnvironmentVariables.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.222.6406"
-          }
         }
       },
       "Microsoft.Extensions.Configuration.FileExtensions/6.0.0": {
@@ -702,18 +698,12 @@
           "System.Text.Json": "6.0.0"
         }
       },
-      "Microsoft.Extensions.Configuration.UserSecrets/6.0.1": {
+      "Microsoft.Extensions.Configuration.UserSecrets/6.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
           "Microsoft.Extensions.Configuration.Json": "6.0.0",
           "Microsoft.Extensions.FileProviders.Abstractions": "6.0.0",
           "Microsoft.Extensions.FileProviders.Physical": "6.0.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Configuration.UserSecrets.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.222.6406"
-          }
         }
       },
       "Microsoft.Extensions.DependencyInjection/7.0.0": {
@@ -772,16 +762,16 @@
         }
       },
       "Microsoft.Extensions.FileSystemGlobbing/6.0.0": {},
-      "Microsoft.Extensions.Hosting/6.0.1": {
+      "Microsoft.Extensions.Hosting/6.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration": "6.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
           "Microsoft.Extensions.Configuration.Binder": "6.0.0",
           "Microsoft.Extensions.Configuration.CommandLine": "6.0.0",
-          "Microsoft.Extensions.Configuration.EnvironmentVariables": "6.0.1",
+          "Microsoft.Extensions.Configuration.EnvironmentVariables": "6.0.0",
           "Microsoft.Extensions.Configuration.FileExtensions": "6.0.0",
           "Microsoft.Extensions.Configuration.Json": "6.0.0",
-          "Microsoft.Extensions.Configuration.UserSecrets": "6.0.1",
+          "Microsoft.Extensions.Configuration.UserSecrets": "6.0.0",
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
           "Microsoft.Extensions.FileProviders.Abstractions": "6.0.0",
@@ -795,12 +785,6 @@
           "Microsoft.Extensions.Logging.EventLog": "6.0.0",
           "Microsoft.Extensions.Logging.EventSource": "6.0.0",
           "Microsoft.Extensions.Options": "7.0.0"
-        },
-        "runtime": {
-          "lib/net6.0/Microsoft.Extensions.Hosting.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.222.6406"
-          }
         }
       },
       "Microsoft.Extensions.Hosting.Abstractions/6.0.0": {
@@ -1783,11 +1767,11 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.IO.Pipelines/6.0.3": {
+      "System.IO.Pipelines/6.0.1": {
         "runtime": {
           "lib/net6.0/System.IO.Pipelines.dll": {
             "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.522.21309"
+            "fileVersion": "6.0.121.56705"
           }
         }
       },
@@ -2365,6 +2349,7 @@
           "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
         }
       },
+      "xunit.runner.visualstudio/2.4.5": {},
       "AssetModule/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "7.0.2",
@@ -4126,19 +4111,19 @@
       "path": "microsoft.aspnet.webapi.core/4.0.20710",
       "hashPath": "microsoft.aspnet.webapi.core.4.0.20710.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Mvc.Testing/6.0.12": {
+    "Microsoft.AspNetCore.Mvc.Testing/6.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-5xFNzs9MA3CjBmyDYqHxr18yC5JWNs9RVKt0qVaudU+28JK1s79Ec76VGoiInz2foi3x8dHvbAuaSicfr8DcfA==",
-      "path": "microsoft.aspnetcore.mvc.testing/6.0.12",
-      "hashPath": "microsoft.aspnetcore.mvc.testing.6.0.12.nupkg.sha512"
+      "sha512": "sha512-D3DXgO3Yser3etw+CYqdTAp9xScsi5t3wjf7aLRiyQuuf40GEBBEsppq97Zj1hYKNWLENKPGKVDcD6FImFziDQ==",
+      "path": "microsoft.aspnetcore.mvc.testing/6.0.1",
+      "hashPath": "microsoft.aspnetcore.mvc.testing.6.0.1.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.TestHost/6.0.12": {
+    "Microsoft.AspNetCore.TestHost/6.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-MbLA+vnZysTgtg18ETawYyKeYv4jvLBChdCjk9AAE4jtwsXdC7Xiaq7pUS8/lAsPMK9N6mHjL8RlXkze2LCCVg==",
-      "path": "microsoft.aspnetcore.testhost/6.0.12",
-      "hashPath": "microsoft.aspnetcore.testhost.6.0.12.nupkg.sha512"
+      "sha512": "sha512-bHrqfRVVxvvjYcvGH4ITEG4p2+b6kJrglMyV1/eLmo9s+LC8L0DD7w4yQGHB0IAiaeSHpMeXuC0u7++M+T17tQ==",
+      "path": "microsoft.aspnetcore.testhost/6.0.1",
+      "hashPath": "microsoft.aspnetcore.testhost.6.0.1.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
       "type": "package",
@@ -4273,12 +4258,12 @@
       "path": "microsoft.extensions.configuration.commandline/6.0.0",
       "hashPath": "microsoft.extensions.configuration.commandline.6.0.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.Configuration.EnvironmentVariables/6.0.1": {
+    "Microsoft.Extensions.Configuration.EnvironmentVariables/6.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-pnyXV1LFOsYjGveuC07xp0YHIyGq7jRq5Ncb5zrrIieMLWVwgMyYxcOH0jTnBedDT4Gh1QinSqsjqzcieHk1og==",
-      "path": "microsoft.extensions.configuration.environmentvariables/6.0.1",
-      "hashPath": "microsoft.extensions.configuration.environmentvariables.6.0.1.nupkg.sha512"
+      "sha512": "sha512-DjYkzqvhiHCq38LW71PcIxXk6nhtV6VySP9yDcSO0goPl7YCU1VG1f2Wbgy58lkA10pWkjHCblZPUyboCB93ZA==",
+      "path": "microsoft.extensions.configuration.environmentvariables/6.0.0",
+      "hashPath": "microsoft.extensions.configuration.environmentvariables.6.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration.FileExtensions/6.0.0": {
       "type": "package",
@@ -4294,12 +4279,12 @@
       "path": "microsoft.extensions.configuration.json/6.0.0",
       "hashPath": "microsoft.extensions.configuration.json.6.0.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.Configuration.UserSecrets/6.0.1": {
+    "Microsoft.Extensions.Configuration.UserSecrets/6.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Fy8yr4V6obi7ZxvKYI1i85jqtwMq8tqyxQVZpRSkgeA8enqy/KvBIMdcuNdznlxQMZa72mvbHqb7vbg4Pyx95w==",
-      "path": "microsoft.extensions.configuration.usersecrets/6.0.1",
-      "hashPath": "microsoft.extensions.configuration.usersecrets.6.0.1.nupkg.sha512"
+      "sha512": "sha512-lB0Hb2V4+RUHy+LjEcqEr4EcV4RWc9EnjAV2GdtWQEdljQX+R4hGREftI7sInU9okP93pDrJiaj6QUJ6ZsslOA==",
+      "path": "microsoft.extensions.configuration.usersecrets/6.0.0",
+      "hashPath": "microsoft.extensions.configuration.usersecrets.6.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyInjection/7.0.0": {
       "type": "package",
@@ -4343,12 +4328,12 @@
       "path": "microsoft.extensions.filesystemglobbing/6.0.0",
       "hashPath": "microsoft.extensions.filesystemglobbing.6.0.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.Hosting/6.0.1": {
+    "Microsoft.Extensions.Hosting/6.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-hbmizc9KPWOacLU8Z8YMaBG6KWdZFppczYV/KwnPGU/8xebWxQxdDeJmLOgg968prb7g2oQgnp6JVLX6lgby8g==",
-      "path": "microsoft.extensions.hosting/6.0.1",
-      "hashPath": "microsoft.extensions.hosting.6.0.1.nupkg.sha512"
+      "sha512": "sha512-M8VzD0ni5VarIRT8njnwK4K2WSAo0kZH4Zc3mKcSGkP4CjDZ91T9ZEFmmwhmo4z7x8AFq+tW0WFi9wX+K2cxkQ==",
+      "path": "microsoft.extensions.hosting/6.0.0",
+      "hashPath": "microsoft.extensions.hosting.6.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Hosting.Abstractions/6.0.0": {
       "type": "package",
@@ -4896,12 +4881,12 @@
       "path": "system.io.filesystem.primitives/4.3.0",
       "hashPath": "system.io.filesystem.primitives.4.3.0.nupkg.sha512"
     },
-    "System.IO.Pipelines/6.0.3": {
+    "System.IO.Pipelines/6.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ryTgF+iFkpGZY1vRQhfCzX0xTdlV3pyaTTqRu2ETbEv+HlV7O6y7hyQURnghNIXvctl5DuZ//Dpks6HdL/Txgw==",
-      "path": "system.io.pipelines/6.0.3",
-      "hashPath": "system.io.pipelines.6.0.3.nupkg.sha512"
+      "sha512": "sha512-1j1pZX1ICzEyjafyssU3BzWVxUsaN3zq0wEmGKj3bxINC6NkmS30eEVuZ7k/QX2UKYNCaUch6g46taYKxcpFtw==",
+      "path": "system.io.pipelines/6.0.1",
+      "hashPath": "system.io.pipelines.6.0.1.nupkg.sha512"
     },
     "System.Linq/4.3.0": {
       "type": "package",
@@ -5308,6 +5293,13 @@
       "sha512": "sha512-CZmgcKkwpyo8FlupZdWpJCryrAOWLh1FBPG6gmVZuPQkGQsim/oL4PcP4nfrC2hHgXUFtluvaJ0Sp9PQKUMNpg==",
       "path": "xunit.extensibility.execution/2.4.2",
       "hashPath": "xunit.extensibility.execution.2.4.2.nupkg.sha512"
+    },
+    "xunit.runner.visualstudio/2.4.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OwHamvBdUKgqsXfBzWiCW/O98BTx81UKzx2bieIOQI7CZFE5NEQZGi8PBQGIKawDW96xeRffiNf20SjfC0x9hw==",
+      "path": "xunit.runner.visualstudio/2.4.5",
+      "hashPath": "xunit.runner.visualstudio.2.4.5.nupkg.sha512"
     },
     "AssetModule/1.0.0": {
       "type": "project",

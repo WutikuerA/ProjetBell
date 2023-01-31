@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetModule", "AssetModule\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceModule", "InvoiceModule\InvoiceModule.csproj", "{3FA766CB-DD2B-4222-9B01-8BD88C0D87B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectBellAPI.IntegrationTesting", "ProjectBellAPI.IntegrationTesting\ProjectBellAPI.IntegrationTesting.csproj", "{D3840C89-D3A9-44DE-8072-F6EA07FECD28}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectBellAPI.IntegrationTest", "ProjectBellAPI.IntegrationTest\ProjectBellAPI.IntegrationTest.csproj", "{DF934D08-07BF-4A0B-A6ED-5BB95005E42D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{3FA766CB-DD2B-4222-9B01-8BD88C0D87B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FA766CB-DD2B-4222-9B01-8BD88C0D87B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FA766CB-DD2B-4222-9B01-8BD88C0D87B5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D3840C89-D3A9-44DE-8072-F6EA07FECD28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D3840C89-D3A9-44DE-8072-F6EA07FECD28}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D3840C89-D3A9-44DE-8072-F6EA07FECD28}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D3840C89-D3A9-44DE-8072-F6EA07FECD28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF934D08-07BF-4A0B-A6ED-5BB95005E42D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF934D08-07BF-4A0B-A6ED-5BB95005E42D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF934D08-07BF-4A0B-A6ED-5BB95005E42D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF934D08-07BF-4A0B-A6ED-5BB95005E42D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
