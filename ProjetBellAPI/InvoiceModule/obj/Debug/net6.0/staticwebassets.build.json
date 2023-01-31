@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rq4Xuiz4fNxW7KlI8ZyrBYZOTy0Ij9rodrFK7GUXVpA=",
+  "Hash": "346sKZqvAX5evHHR5D9tRvQSK7Nr+vrq34DWfwUbNF0=",
   "Source": "InvoiceModule",
   "BasePath": "_content/InvoiceModule",
   "Mode": "Default",
@@ -11,10 +11,10 @@
       "Version": 2,
       "Source": "AssetModule",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishProperties": "",
       "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildProperties": "",
       "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
     }
   ],
