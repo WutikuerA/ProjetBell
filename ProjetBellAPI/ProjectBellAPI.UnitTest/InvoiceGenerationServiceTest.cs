@@ -28,6 +28,7 @@ namespace ProjectBellAPI.UnitTest
 
             //Assert
             Assert.Equal(0, invoice.TotalPrice);
+            //...
 
         }
 
@@ -54,6 +55,7 @@ namespace ProjectBellAPI.UnitTest
 
             //Assert
             Assert.Equal(_price, invoice.TotalPrice);
+            //...
         }
 
 

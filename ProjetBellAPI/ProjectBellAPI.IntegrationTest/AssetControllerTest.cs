@@ -27,10 +27,11 @@ namespace ProjectBellAPI.IntegrationTesting
             List<Asset>? assetList = response?.Content?.ReadFromJsonAsync<List<Asset>>()?.Result;
 
             //Assert
-            // By default we have 3 data seeds when app in launched for the 1st time
+            // By default we have 3 data seeds when app is launched for the 1st time
             Assert.Equal(assetList.Count, 3);
             Assert.Equal(assetList[0].Name, "Service1");
             Assert.Equal(assetList[0].Price, 20);
+            // ...
         }
     }
 }
